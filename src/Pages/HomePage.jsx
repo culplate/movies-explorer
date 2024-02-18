@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
 import { fetchTrending } from "../../api";
+import { Link, useLocation } from "react-router-dom";
 
 export default function HomePage() {
   const [trending, setTrending] = useState([]);
+  const location = useLocation();
 
   useEffect(() => {
     async function fetchData() {
@@ -23,7 +25,9 @@ export default function HomePage() {
         {trending.map((item) => {
           return (
             <li key={item.id}>
-              <a href="#">{item.original_title}</a>
+              <Link to={`movies/${item.id}`} state={{ from: location }}>
+                {item.original_title}
+              </Link>
             </li>
           );
         })}
