@@ -1,0 +1,28 @@
+.header {
+  background-color: white;
+  display: block;
+  padding: 6px 4px;
+}
+
+.nav {
+  display: flex;
+}
+
+.nav a {
+  padding: 6px 15px;
+  color: rgb(63, 63, 63);
+  transition: background-color 0.1s ease;
+}
+
+.nav a:not(:last-child) {
+  margin-right: 6px;
+}
+
+.nav .active {
+  color: rgb(88, 137, 168);
+  background-color: rgb(226, 240, 253);
+}
+
+.nav a:hover {
+  background-color: rgb(210, 219, 230);
+}
