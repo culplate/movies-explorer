@@ -26,13 +26,15 @@ export default function MovieDeatilsPage() {
 
   return (
     <main>
-      <Link to={backLinkHref}>Go back</Link>
-      <h1>Movie details page - {movieId}</h1>
-      <h2>{movie.original_title}</h2>
-      <img
-        src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
-        alt={`${movie.title} movie poster Image`}
-      />
+      <div>
+        <Link to={backLinkHref}>Go back</Link>
+        <h1>Movie details page - {movieId}</h1>
+        <h2>{movie.original_title}</h2>
+        <img
+          src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
+          alt={`${movie.title} movie poster Image`}
+        />
+      </div>
     </main>
   );
 }
