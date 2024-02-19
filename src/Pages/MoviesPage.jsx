@@ -7,14 +7,9 @@ export default function MoviesPage() {
   const location = useLocation();
   const [searchParams, setSearchParams] = useSearchParams();
   const query = searchParams.get("query");
-  // const [query, setQuery] = useState("");
   const [results, setResults] = useState([]);
 
-  const handleSearch = (newQuery) => {
-    // setQuery(`${Date.now()}/${newQuery}`);
-    setSearchParams({ query: newQuery });
-    setResults([]);
-  };
+  const handleSearch = (newQuery) => setSearchParams({ query: newQuery });
 
   useEffect(() => {
     if (!query) return;
@@ -27,6 +22,9 @@ export default function MoviesPage() {
         setResults(fetchedData);
       } catch (error) {
         // setError(true)
+        toast.error("Something went wrong. Reload page", {
+          id: "fetchError",
+        });
         console.log(error);
       } finally {
         // setLoading(false)

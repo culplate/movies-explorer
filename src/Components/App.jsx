@@ -6,10 +6,9 @@ import MoviesPage from "../Pages/MoviesPage";
 import MovieDetailsPage from "../Pages/MovieDetailsPage";
 import NotFound from "../Pages/NotFound";
 import css from "./App.module.css";
+import { Toaster } from "react-hot-toast";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <>
       <Header />
@@ -21,6 +20,7 @@ function App() {
           <Route path="*" element={<NotFound />} />
         </Routes>
       </div>
+      <Toaster position="top-right" />
     </>
   );
 }
