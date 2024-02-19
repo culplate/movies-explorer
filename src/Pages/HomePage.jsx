@@ -11,7 +11,7 @@ export default function HomePage() {
       try {
         const fetchedData = await fetchTrending();
         setTrending(fetchedData);
-      } catch {
+      } catch (error) {
         console.log(error);
       }
     }

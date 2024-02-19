@@ -14,7 +14,6 @@ const options = {
 }
 export const fetchTrending = async () => {
     const response = await axios.get(`${URL + trendingParam}`, options)
-    console.log(response.data.results)
     return response.data.results;
 }
 
