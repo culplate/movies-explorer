@@ -36,6 +36,7 @@ export default function MoviesPage() {
   return (
     <main>
       <h1>Movies Page</h1>
+      {query && <h2>Showing results for - {query}</h2>}
       <SearchForm onSearch={handleSearch} />
       <ul>
         {results.map((item) => {

@@ -11,6 +11,7 @@ export const SearchForm = ({ onSearch }) => {
       return;
     }
     onSearch(e.target.elements.query.value);
+    e.target.reset();
   };
 
   return (
