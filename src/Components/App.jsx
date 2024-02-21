@@ -15,8 +15,8 @@ function App() {
   return (
     <>
       <Header />
-      <div className={css.container}>
-        <Suspense fallback={<div>Loading page...</div>}>
+      <Suspense fallback={<div>Loading page...</div>}>
+        <div className={css.container}>
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/movies" element={<MoviesPage />} />
@@ -26,8 +26,8 @@ function App() {
             </Route>
             <Route path="*" element={<NotFound />} />
           </Routes>
-        </Suspense>
-      </div>
+        </div>
+      </Suspense>
       <Toaster position="top-right" />
     </>
   );
