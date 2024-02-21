@@ -1,6 +1,7 @@
 import { Link, useLocation, useParams, Outlet } from "react-router-dom";
 import { fetchByID } from "../../api";
 import { useEffect, useState } from "react";
+import { Loader } from "../Components/Loader/Loader";
 
 export default function MovieDeatilsPage() {
   const { movieId } = useParams();
@@ -27,6 +28,7 @@ export default function MovieDeatilsPage() {
   return (
     <main>
       <Link to={backLinkHref}>Go back</Link>
+      {loading && <Loader />}
       {!loading && (
         <div>
           <h1>Movie details page - {movieId}</h1>

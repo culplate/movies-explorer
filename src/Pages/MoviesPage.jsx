@@ -2,10 +2,12 @@ import { useEffect, useState } from "react";
 import { fetchByQuery } from "../../api";
 import { SearchForm } from "../Components/SearchForm/SearchForm";
 import { Link, useLocation, useSearchParams } from "react-router-dom";
+import { Loader } from "../Components/Loader/Loader";
 
 export default function MoviesPage() {
   const location = useLocation();
   const [searchParams, setSearchParams] = useSearchParams();
+  const [loading, setLoading] = useState(false);
   const query = searchParams.get("query");
   const [results, setResults] = useState([]);
 
@@ -16,7 +18,7 @@ export default function MoviesPage() {
 
     async function fetchData() {
       try {
-        // setLoading(true)
+        setLoading(true);
         // setError(false)
         const fetchedData = await fetchByQuery(query);
         setResults(fetchedData);
@@ -27,7 +29,7 @@ export default function MoviesPage() {
         });
         console.log(error);
       } finally {
-        // setLoading(false)
+        setLoading(false);
       }
     }
     fetchData();
@@ -36,7 +38,8 @@ export default function MoviesPage() {
   return (
     <main>
       <h1>Movies Page</h1>
-      {query && <h2>Showing results for - {query}</h2>}
+      {loading && <Loader />}
+      {query && <h2>Showing results for - "{query}"a</h2>}
       <SearchForm onSearch={handleSearch} />
       <ul>
         {results.map((item) => {
