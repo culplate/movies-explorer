@@ -1,6 +1,6 @@
 import { Link, useLocation, useParams, Outlet } from "react-router-dom";
 import { fetchByID } from "../../api";
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import { Loader } from "../Components/Loader/Loader";
 
 export default function MovieDeatilsPage() {
@@ -39,7 +39,9 @@ export default function MovieDeatilsPage() {
           />
           <Link to="cast">Cast</Link>
           <Link to="reviews">Reviews</Link>
-          <Outlet context={[movie]} />
+          <Suspense fallback={<div>Loading subpage...</div>}>
+            <Outlet context={[movie]} />
+          </Suspense>
         </div>
       )}
     </main>
