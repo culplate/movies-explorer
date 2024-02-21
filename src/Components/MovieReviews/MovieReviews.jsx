@@ -1,6 +1,6 @@
 import { useOutletContext } from "react-router-dom";
 
-export const MovieReviews = () => {
+export default function MovieReviews() {
   const [movie] = useOutletContext();
   return (
     <div>
@@ -8,4 +8,4 @@ export const MovieReviews = () => {
       <p>{movie.title}</p>
     </div>
   );
-};
+}
