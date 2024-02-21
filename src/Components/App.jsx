@@ -3,6 +3,7 @@ import { Header } from "./Header/Header";
 import css from "./App.module.css";
 import { Toaster } from "react-hot-toast";
 import { Suspense, lazy } from "react";
+import { Loader } from "./Loader/Loader";
 
 const HomePage = lazy(() => import("../Pages/HomePage"));
 const MoviesPage = lazy(() => import("../Pages/MoviesPage"));
@@ -15,7 +16,7 @@ function App() {
   return (
     <>
       <Header />
-      <Suspense fallback={<div>Loading page...</div>}>
+      <Suspense fallback={<Loader />}>
         <div className={css.container}>
           <Routes>
             <Route path="/" element={<HomePage />} />

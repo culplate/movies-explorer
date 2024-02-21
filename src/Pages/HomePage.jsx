@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { fetchTrending } from "../../api";
 import { Link, useLocation } from "react-router-dom";
+import toast from "react-hot-toast";
 
 export default function HomePage() {
   const [trending, setTrending] = useState([]);
@@ -12,7 +13,7 @@ export default function HomePage() {
         const fetchedData = await fetchTrending();
         setTrending(fetchedData);
       } catch (error) {
-        console.log(error);
+        toast.error("Whoops, reload the page.");
       }
     }
     fetchData();

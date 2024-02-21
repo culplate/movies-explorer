@@ -1,5 +1,5 @@
 import { Link, useLocation, useParams, Outlet } from "react-router-dom";
-import { fetchByID } from "../../api";
+import { fetchByID, fetchReviewsByID, fetchCreditsByID } from "../../api";
 import { Suspense, useEffect, useState } from "react";
 import { Loader } from "../Components/Loader/Loader";
 
@@ -17,7 +17,7 @@ export default function MovieDeatilsPage() {
         const fetchedMovie = await fetchByID(movieId);
         setMovie(fetchedMovie);
       } catch (error) {
-        console.log(error);
+        toast.error("Whoops, reload the page.");
       } finally {
         setLoading(false);
       }
@@ -39,8 +39,8 @@ export default function MovieDeatilsPage() {
           />
           <Link to="cast">Cast</Link>
           <Link to="reviews">Reviews</Link>
-          <Suspense fallback={<div>Loading subpage...</div>}>
-            <Outlet context={[movie]} />
+          <Suspense fallback={<Loader />}>
+            <Outlet context={[movieId]} />
           </Suspense>
         </div>
       )}

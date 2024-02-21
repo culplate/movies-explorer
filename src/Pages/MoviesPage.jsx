@@ -7,8 +7,8 @@ import { Loader } from "../Components/Loader/Loader";
 export default function MoviesPage() {
   const location = useLocation();
   const [searchParams, setSearchParams] = useSearchParams();
-  const [loading, setLoading] = useState(false);
   const query = searchParams.get("query");
+  const [loading, setLoading] = useState(false);
   const [results, setResults] = useState([]);
 
   const handleSearch = (newQuery) => setSearchParams({ query: newQuery });
@@ -19,11 +19,9 @@ export default function MoviesPage() {
     async function fetchData() {
       try {
         setLoading(true);
-        // setError(false)
         const fetchedData = await fetchByQuery(query);
         setResults(fetchedData);
       } catch (error) {
-        // setError(true)
         toast.error("Something went wrong. Reload page", {
           id: "fetchError",
         });
