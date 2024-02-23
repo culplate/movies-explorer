@@ -39,3 +39,7 @@ a {
   text-decoration: none;
   display: block;
 }
+
+button {
+  cursor: pointer;
+}

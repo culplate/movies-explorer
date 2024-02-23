@@ -2,6 +2,7 @@ import { Link, useLocation, useParams, Outlet } from "react-router-dom";
 import { fetchByID, fetchReviewsByID, fetchCreditsByID } from "../../api";
 import { Suspense, useEffect, useState } from "react";
 import { Loader } from "../Components/Loader/Loader";
+import { HeadlineMain } from "../Components/HeadlineMain/HeadlineMain";
 
 export default function MovieDeatilsPage() {
   const { movieId } = useParams();
@@ -30,8 +31,7 @@ export default function MovieDeatilsPage() {
       {loading && <Loader />}
       {!loading && (
         <div>
-          <h1>Movie details page - {movieId}</h1>
-          <h2>{movie.original_title}</h2>
+          <HeadlineMain>{movie.original_title}</HeadlineMain>
           <img
             src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
             alt={`${movie.title} movie poster Image`}

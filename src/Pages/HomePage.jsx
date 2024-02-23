@@ -3,6 +3,7 @@ import { fetchTrending } from "../../api";
 import { useLocation } from "react-router-dom";
 import toast from "react-hot-toast";
 import { MovieList } from "../Components/MovieList/MovieList";
+import { HeadlineMain } from "../Components/HeadlineMain/HeadlineMain";
 
 export default function HomePage() {
   const [trending, setTrending] = useState([]);
@@ -21,7 +22,7 @@ export default function HomePage() {
 
   return (
     <main>
-      <h1>Trending this week</h1>
+      <HeadlineMain>Trending this week</HeadlineMain>
       <MovieList data={trending} />
     </main>
   );

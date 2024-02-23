@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
 import { fetchByQuery } from "../../api";
 import { SearchForm } from "../Components/SearchForm/SearchForm";
-import { useLocation, useSearchParams } from "react-router-dom";
+import { useSearchParams } from "react-router-dom";
 import { Loader } from "../Components/Loader/Loader";
 import { MovieList } from "../Components/MovieList/MovieList";
+import { HeadlineMain } from "../Components/HeadlineMain/HeadlineMain";
+import { HeadlineTopic } from "../Components/HeadlineTopic/HeadlineTopic";
 
 export default function MoviesPage() {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -35,9 +37,9 @@ export default function MoviesPage() {
 
   return (
     <main>
-      <h1>Movies Page</h1>
+      <HeadlineMain>Movies Search</HeadlineMain>
       {loading && <Loader />}
-      {query && <h2>Showing results for - "{query}"a</h2>}
+      {query && <HeadlineTopic>Showing results for - "{query}"</HeadlineTopic>}
       <SearchForm onSearch={handleSearch} />
       <MovieList data={results} />
     </main>
