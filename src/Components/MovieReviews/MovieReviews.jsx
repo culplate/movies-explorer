@@ -2,6 +2,8 @@ import { useOutletContext } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { toast } from "react-hot-toast";
 import { fetchReviewsByID } from "../../../api";
+import { ReviewCard } from "../ReviewCard/ReviewCard";
+import { Loader } from "../Loader/Loader";
 
 export default function MovieReviews() {
   const [loading, setLoading] = useState(false);
@@ -11,6 +13,7 @@ export default function MovieReviews() {
   useEffect(() => {
     async function FetchMovie() {
       try {
+        setReviews([]);
         setLoading(true);
         const fetchedReviews = await fetchReviewsByID(movieId);
         setReviews(fetchedReviews);
@@ -26,18 +29,22 @@ export default function MovieReviews() {
   return (
     <div>
       <h3>Movie Reviews</h3>
-      <p>{reviews.length || "No reviews"}</p>
-      {!loading && reviews.length && (
+      {loading && <Loader />}
+      {/* {!loading && reviews.length && (
         <ul>
           {reviews.map((item) => {
-            return (
-              <li key={item.id}>
-                <p>{item.author}</p>
-                <p>{item.content}</p>
-              </li>
-            );
+            return <ReviewCard key={item.id} reviewInfo={item} />;
           })}
         </ul>
+      )} */}
+      {!loading && reviews.length > 0 ? (
+        <ul>
+          {reviews.map((item) => {
+            return <ReviewCard key={item.id} reviewInfo={item} />;
+          })}
+        </ul>
+      ) : (
+        <p>No reviews</p>
       )}
     </div>
   );
