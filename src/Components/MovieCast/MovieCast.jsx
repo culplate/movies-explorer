@@ -30,13 +30,14 @@ export default function MovieReviews() {
     <div>
       <HeadlineTopic>Cast</HeadlineTopic>
       {loading && <Loader />}
-      {!loading && cast.length && (
+      {!loading && cast.length > 0 && (
         <ul className={css.container}>
           {cast.map((item) => {
             return <CastCard key={item.id} castInfo={item} />;
           })}
         </ul>
       )}
+      {!cast.length && <p>No info</p>}
     </div>
   );
 }

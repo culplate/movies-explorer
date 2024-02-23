@@ -1,14 +1,19 @@
 import { HeadlineTopic } from "../HeadlineTopic/HeadlineTopic";
+import { NoImage } from "../NoImage/NoImage";
 import css from "./MovieDetailsContent.module.css";
 
 export const MovieDetailsContent = ({ movieData }) => {
   return (
     <div className={css.container}>
-      <img
-        className={css.poster}
-        src={`https://image.tmdb.org/t/p/w500/${movieData.poster_path}`}
-        alt={`${movieData.title} movie poster Image`}
-      />
+      {movieData.poster_path ? (
+        <img
+          className={css.poster}
+          src={`https://image.tmdb.org/t/p/w500/${movieData.poster_path}`}
+          alt={`${movieData.title} movie poster Image`}
+        />
+      ) : (
+        <NoImage />
+      )}
       <div className={css.containerInfo}>
         <HeadlineTopic className={css.headline}>
           {movieData.original_title}
