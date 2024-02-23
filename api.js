@@ -26,8 +26,8 @@ export const fetchByID = async (id) => {
 
 export const fetchCreditsByID = async (id) => {
     const response = await axios.get(`${URL}movie/${id}/credits?${language}`, options);
-    console.log(response.data.cast.slice(1, 10));
-    return response.data.cast.slice(1, 10);
+    console.log(response.data.cast.slice(1, 11));
+    return response.data.cast.slice(1, 11);
 }
 
 export const fetchReviewsByID = async (id) => {

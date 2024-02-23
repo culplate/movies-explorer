@@ -1,0 +1,14 @@
+.card {
+  display: flex;
+  flex-basis: calc((100% - (15px * 4)) / 5);
+  flex-direction: column;
+  max-width: 264px;
+}
+
+.title {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  margin-bottom: 6px;
+  font-weight: 500;
+}

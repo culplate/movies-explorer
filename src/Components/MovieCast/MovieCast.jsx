@@ -2,7 +2,10 @@ import { useState, useEffect } from "react";
 import { useOutletContext } from "react-router-dom";
 import { fetchCreditsByID } from "../../../api";
 import { toast } from "react-hot-toast";
-
+import { Loader } from "../Loader/Loader";
+import { CastCard } from "../CastCard/CastCard";
+import css from "./MovieCast.module.css";
+import { HeadlineTopic } from "../HeadlineTopic/HeadlineTopic";
 export default function MovieReviews() {
   const [cast, setCast] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -25,20 +28,12 @@ export default function MovieReviews() {
 
   return (
     <div>
-      <h3>Cast</h3>
-      <p>{cast.length || "No info"}</p>
+      <HeadlineTopic>Cast</HeadlineTopic>
+      {loading && <Loader />}
       {!loading && cast.length && (
-        <ul>
+        <ul className={css.container}>
           {cast.map((item) => {
-            return (
-              <li key={item.id}>
-                <p>{item.name}</p>
-                <img
-                  src={`https://image.tmdb.org/t/p/w500/${item.profile_path}`}
-                  alt="kek"
-                />
-              </li>
-            );
+            return <CastCard key={item.id} castInfo={item} />;
           })}
         </ul>
       )}
