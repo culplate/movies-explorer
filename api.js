@@ -20,19 +20,16 @@ export const fetchTrending = async () => {
 
 export const fetchByID = async (id) => {
     const response = await axios.get(`${URL}movie/${id}`, options);
-    console.log(response.data)
     return response.data;
 }
 
 export const fetchCreditsByID = async (id) => {
     const response = await axios.get(`${URL}movie/${id}/credits?${language}`, options);
-    console.log(response.data.cast.slice(1, 11));
     return response.data.cast.slice(1, 11);
 }
 
 export const fetchReviewsByID = async (id) => {
     const response = await axios.get(`${URL}movie/${id}/reviews?${language}`, options);
-    console.log(response.data.results.slice(1, 6));
     return response.data.results.slice(1, 6);
 }
 
