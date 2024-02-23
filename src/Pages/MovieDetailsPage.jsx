@@ -9,7 +9,6 @@ export default function MovieDeatilsPage() {
   const backLinkHref = location.state?.from ?? "/";
   const [movie, setMovie] = useState({});
   const [loading, setLoading] = useState(false);
-
   useEffect(() => {
     async function FetchMovie() {
       try {

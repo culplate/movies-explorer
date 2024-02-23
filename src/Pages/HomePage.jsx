@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 import { fetchTrending } from "../../api";
-import { Link, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import toast from "react-hot-toast";
+import { MovieList } from "../Components/MovieList/MovieList";
 
 export default function HomePage() {
   const [trending, setTrending] = useState([]);
-  const location = useLocation();
 
   useEffect(() => {
     async function fetchData() {
@@ -22,17 +22,7 @@ export default function HomePage() {
   return (
     <main>
       <h1>Trending this week</h1>
-      <ul>
-        {trending.map((item) => {
-          return (
-            <li key={item.id}>
-              <Link to={`movies/${item.id}`} state={{ from: location }}>
-                {item.original_title}
-              </Link>
-            </li>
-          );
-        })}
-      </ul>
+      <MovieList data={trending} />
     </main>
   );
 }
