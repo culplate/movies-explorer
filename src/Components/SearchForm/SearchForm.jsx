@@ -1,4 +1,5 @@
 import toast from "react-hot-toast";
+import css from "./SearchForm.module.css";
 
 export const SearchForm = ({ onSearch }) => {
   const handleSearch = (e) => {
@@ -15,9 +16,16 @@ export const SearchForm = ({ onSearch }) => {
   };
 
   return (
-    <form onSubmit={handleSearch}>
-      <input type="text" name="query" placeholder="Explore movies"></input>
-      <button type="submit">Search</button>
+    <form className={css.form} onSubmit={handleSearch}>
+      <input
+        className={css.input}
+        type="text"
+        name="query"
+        placeholder="Explore movies"
+      ></input>
+      <button className={css.button} type="submit">
+        Search
+      </button>
     </form>
   );
 };
