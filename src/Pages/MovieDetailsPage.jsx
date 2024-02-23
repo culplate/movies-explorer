@@ -3,6 +3,7 @@ import { fetchByID, fetchReviewsByID, fetchCreditsByID } from "../../api";
 import { Suspense, useEffect, useState } from "react";
 import { Loader } from "../Components/Loader/Loader";
 import { HeadlineMain } from "../Components/HeadlineMain/HeadlineMain";
+import { BackLink } from "../Components/BackLink/BackLink";
 
 export default function MovieDeatilsPage() {
   const { movieId } = useParams();
@@ -27,7 +28,7 @@ export default function MovieDeatilsPage() {
 
   return (
     <main>
-      <Link to={backLinkHref}>Go back</Link>
+      <BackLink route={backLinkHref} />
       {loading && <Loader />}
       {!loading && (
         <div>
