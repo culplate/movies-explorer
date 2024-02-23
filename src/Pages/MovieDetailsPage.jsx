@@ -2,7 +2,6 @@ import { useLocation, useParams, Outlet } from "react-router-dom";
 import { fetchByID } from "../../api";
 import { Suspense, useEffect, useState } from "react";
 import { Loader } from "../Components/Loader/Loader";
-import { HeadlineMain } from "../Components/HeadlineMain/HeadlineMain";
 import { BackLink } from "../Components/BackLink/BackLink";
 import { MovieDetailsContent } from "../Components/MovieDetailsContent/MovieDetailsContent";
 import { MovieDeatilsNav } from "../Components/MovieDetailsNav/MovieDetailsNav";
@@ -13,6 +12,7 @@ export default function MovieDeatilsPage() {
   const backLinkHref = location.state?.from ?? "/";
   const [movie, setMovie] = useState({});
   const [loading, setLoading] = useState(false);
+
   useEffect(() => {
     async function FetchMovie() {
       try {

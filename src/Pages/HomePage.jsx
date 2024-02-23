@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { fetchTrending } from "../../api";
-import { useLocation } from "react-router-dom";
 import toast from "react-hot-toast";
 import { MovieList } from "../Components/MovieList/MovieList";
 import { HeadlineMain } from "../Components/HeadlineMain/HeadlineMain";

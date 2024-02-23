@@ -30,13 +30,6 @@ export default function MovieReviews() {
     <div>
       <h3>Movie Reviews</h3>
       {loading && <Loader />}
-      {/* {!loading && reviews.length && (
-        <ul>
-          {reviews.map((item) => {
-            return <ReviewCard key={item.id} reviewInfo={item} />;
-          })}
-        </ul>
-      )} */}
       {!loading && reviews.length > 0 ? (
         <ul>
           {reviews.map((item) => {

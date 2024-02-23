@@ -6,6 +6,7 @@ import { Loader } from "../Loader/Loader";
 import { CastCard } from "../CastCard/CastCard";
 import css from "./MovieCast.module.css";
 import { HeadlineTopic } from "../HeadlineTopic/HeadlineTopic";
+
 export default function MovieReviews() {
   const [cast, setCast] = useState([]);
   const [loading, setLoading] = useState(false);
