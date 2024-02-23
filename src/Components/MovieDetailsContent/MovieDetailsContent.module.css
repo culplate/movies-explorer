@@ -1,0 +1,13 @@
+.container {
+  display: flex;
+  gap: 20px;
+  margin: 20px 0;
+}
+
+.poster {
+  height: 500px;
+}
+
+.description {
+  font-weight: 600;
+}

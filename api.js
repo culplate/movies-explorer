@@ -20,6 +20,7 @@ export const fetchTrending = async () => {
 
 export const fetchByID = async (id) => {
     const response = await axios.get(`${URL}movie/${id}`, options);
+    console.log(response.data)
     return response.data;
 }
 
