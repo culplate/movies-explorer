@@ -12,7 +12,7 @@ export const MovieCard = ({ data, location }) => {
             ? `${data.id}`
             : `movies/${data.id}`
         }
-        state={{ from: location }}
+        state={currLocation}
       >
         <div className={css.card}>
           <span className={css.title}>{data.original_title}</span>
