@@ -1,0 +1,17 @@
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+
+  @include font(16, 24);
+}
+
+.button:disabled {
+  cursor: not-allowed;
+}
+
+.icon {
+  stroke: black;
+  margin-right: 4px;
+}

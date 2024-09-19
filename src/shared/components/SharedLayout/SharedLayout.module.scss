@@ -1,0 +1,13 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
+}
+
+.content {
+  //TODO CHANGE TO HEADER HEIGHT HERE
+  min-height: 100dvh;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
