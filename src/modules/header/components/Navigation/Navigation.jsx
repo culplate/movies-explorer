@@ -9,7 +9,13 @@ export const Navigation = () => {
         Home
       </NavLink>
       <NavLink to="/movies" className={activeLinkClass}>
-        Movies
+        Movies & Shows
+      </NavLink>
+      <NavLink to="/kek" className={activeLinkClass}>
+        Support
+      </NavLink>
+      <NavLink to="/movlies" className={activeLinkClass}>
+        Subscriptions
       </NavLink>
     </nav>
   );

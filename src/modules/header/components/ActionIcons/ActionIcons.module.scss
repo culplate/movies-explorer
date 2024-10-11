@@ -1,0 +1,15 @@
+.iconWrap {
+  display: flex;
+
+  @include media(laptop) {
+    gap: 14px;
+  }
+
+  @include media(desktop) {
+    gap: 30px;
+  }
+}
+
+.icon {
+  width: 34px;
+}

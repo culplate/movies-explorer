@@ -2,7 +2,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
+  // width: 100%;
 
   @include font(16, 24);
 }
@@ -12,6 +12,6 @@
 }
 
 .icon {
-  stroke: black;
+  // stroke: black;
   margin-right: 4px;
 }
