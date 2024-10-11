@@ -13,11 +13,11 @@ screen types:
       @content;
     }
   } @else if $_screen == to-laptop {
-    @media screen and (max-width: $to-tablet) {
+    @media screen and (max-width: $to-laptop) {
       @content;
     }
   } @else if $_screen == laptop {
-    @media screen and (min-width: $tablet) {
+    @media screen and (min-width: $laptop) {
       @content;
     }
   } @else if $_screen == to-desktop {

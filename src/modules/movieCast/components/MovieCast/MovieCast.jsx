@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { useOutletContext } from 'react-router-dom';
 import { toast } from 'react-hot-toast';
 
-import { fetchCreditsByID } from '../../../../services/themoviedbApi';
+import { fetchCreditsByID } from 'services/themoviedbApi';
 
 import { HeadlineTopic, Loader } from 'shared/components';
 import { CastCard } from '../CastCard/CastCard';
@@ -26,7 +26,7 @@ const MovieCast = () => {
       }
     }
     FetchMovie();
-  }, []);
+  }, [movieId]);
 
   return (
     <div>

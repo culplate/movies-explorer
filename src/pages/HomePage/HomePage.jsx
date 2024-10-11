@@ -22,7 +22,7 @@ export default function HomePage() {
 
   return (
     <main>
-      <HeadlineMain>Trending this week</HeadlineMain>
+      {/* <HeadlineMain>Trending this week</HeadlineMain> */}
       <MovieList data={trending} />
     </main>
   );

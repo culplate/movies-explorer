@@ -3,6 +3,11 @@ import css from './MovieDetailsContent.module.scss';
 import { HeadlineTopic, NoImage } from 'shared/components';
 
 const MovieDetailsContent = ({ movieData }) => {
+  if (!movieData) {
+    // TODO add loader
+    return <p>Loading...</p>;
+  }
+
   return (
     <div className={css.container}>
       {movieData.poster_path ? (

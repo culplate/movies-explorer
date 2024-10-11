@@ -3,7 +3,7 @@ import css from './MovieCard.module.scss';
 
 import { NoImage } from 'shared/components';
 
-export const MovieCard = ({ data, location }) => {
+export const MovieCard = ({ data }) => {
   const currLocation = useLocation();
   return (
     <li>

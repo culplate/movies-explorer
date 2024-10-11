@@ -9,8 +9,8 @@ import { MovieDetailsNav } from 'modules/movieDetailsNav';
 export default function MovieDeatilsPage() {
   const { movieId } = useParams();
   const location = useLocation();
-  const backLinkHref = useRef(location.state);
-  const [movie, setMovie] = useState({});
+  const backLinkHref = useRef(location.state?.from || '/movies');
+  const [movie, setMovie] = useState(null);
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
