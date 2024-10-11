@@ -1,7 +1,10 @@
+import clsx from 'clsx';
 import css from './HeadlineTopic.module.scss';
 
-const HeadlineTopic = ({ children }) => {
-  return <h2 className={css.headline}>{children}</h2>;
+const HeadlineTopic = ({ children, className }) => {
+  return (
+    <h2 className={clsx(css.headline, className && className)}>{children}</h2>
+  );
 };
 
 export default HeadlineTopic;

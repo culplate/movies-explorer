@@ -3,7 +3,7 @@ import css from './ActionIcons.module.scss';
 import { useMedia } from 'hooks/useMedia';
 
 export const ActionIcons = () => {
-  const { isLaptop, isDesktop } = useMedia();
+  const { isLaptop } = useMedia();
   return (
     <div className={css.iconWrap}>
       <IconButton
