@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
 import toast from 'react-hot-toast';
-import { fetchTrending } from '../../services/themoviedbApi';
+import { fetchTrending } from 'services/themoviedbApi';
 
-import { HeadlineMain } from 'shared/components';
-import { MovieList } from 'modules/movieList';
+import { Hero } from 'modules/hero';
+import { Container } from 'shared/components';
 
 export default function HomePage() {
   const [trending, setTrending] = useState([]);
@@ -13,6 +13,7 @@ export default function HomePage() {
       try {
         const fetchedData = await fetchTrending();
         setTrending(fetchedData);
+        console.log(fetchedData);
       } catch (error) {
         toast.error('Whoops, reload the page.');
       }
@@ -22,8 +23,7 @@ export default function HomePage() {
 
   return (
     <main>
-      {/* <HeadlineMain>Trending this week</HeadlineMain> */}
-      <MovieList data={trending} />
+      <Hero trending={trending} />
     </main>
   );
 }

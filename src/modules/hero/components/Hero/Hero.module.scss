@@ -1,0 +1,77 @@
+.hero {
+  min-height: 100dvh;
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  text-align: center;
+}
+
+.heroBackground {
+  width: 100vw;
+  height: 60%;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  background-size: cover;
+  background-position:
+    center,
+    center 2px,
+    center -1px;
+  background-repeat: no-repeat;
+
+  z-index: -1;
+
+  @include media(mobile) {
+    background-image: linear-gradient(
+        180deg,
+        rgba(20, 20, 20, 1) 0%,
+        rgba(20, 20, 20, 0) 70%
+      ),
+      linear-gradient(0deg, rgba(20, 20, 20, 1) 0%, rgba(20, 20, 20, 0) 70%),
+      url('../../../../shared/images/mobile-bg.webp');
+  }
+
+  @include media(laptop) {
+    height: 70%;
+    background-image: linear-gradient(
+        180deg,
+        rgba(20, 20, 20, 1) 0%,
+        rgba(20, 20, 20, 0) 70%
+      ),
+      linear-gradient(0deg, rgba(20, 20, 20, 1) 0%, rgba(20, 20, 20, 0) 70%),
+      url('../../../../shared/images/laptop-bg.webp');
+  }
+
+  @include media(desktop) {
+    background-image: linear-gradient(
+        180deg,
+        rgba(20, 20, 20, 1) 0%,
+        rgba(20, 20, 20, 0) 70%
+      ),
+      linear-gradient(0deg, rgba(20, 20, 20, 1) 0%, rgba(20, 20, 20, 0) 70%),
+      url('../../../../shared/images/desktop-bg.webp');
+  }
+}
+
+.actionBtn {
+  color: $absolute-white;
+  background-color: $red45;
+  min-width: 201px;
+
+  padding: 14px 24px;
+  margin-bottom: 13.5vh;
+
+  border-radius: 8px;
+}
+
+.title {
+  margin-bottom: 10px;
+
+  @include media(desktop) {
+    margin-bottom: 14px;
+  }
+}
