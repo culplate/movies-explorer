@@ -1,5 +1,14 @@
 .headline {
-  font-size: 46px;
-  line-height: 1.07;
-  margin: 20px 0;
+  @include font(28, 42);
+  margin: 10px 0;
+
+  color: $absolute-white;
+
+  @include media(laptop) {
+    @include font(48, 72);
+  }
+
+  @include media(desktop) {
+    @include font(58, 87);
+  }
 }

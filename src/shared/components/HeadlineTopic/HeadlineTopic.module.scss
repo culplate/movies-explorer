@@ -1,4 +1,11 @@
 .headline {
-  font-size: 30px;
-  line-height: 1.11;
+  @include font(20, 30);
+
+  @include media(laptop) {
+    @include font(28, 42);
+  }
+
+  @include media(desktop) {
+    @include font(38, 57);
+  }
 }
