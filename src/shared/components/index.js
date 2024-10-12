@@ -8,3 +8,4 @@ export { default as Loader } from './Loader/Loader';
 export { default as HeadlineMain } from './HeadlineMain/HeadlineMain';
 export { default as HeadlineTopic } from './HeadlineTopic/HeadlineTopic';
 export { default as NoImage } from './NoImage/NoImage';
+export { default as LogoIcon } from './LogoIcon/LogoIcon';
