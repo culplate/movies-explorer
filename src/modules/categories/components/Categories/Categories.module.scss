@@ -1,0 +1,11 @@
+.text {
+  margin-bottom: 20px;
+
+  @include media(laptop) {
+    margin-bottom: 60px;
+  }
+
+  @include media(desktop) {
+    margin-bottom: 80px;
+  }
+}
