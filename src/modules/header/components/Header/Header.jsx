@@ -19,6 +19,8 @@ const Header = () => {
           <ActionIcons />
         </>
       )}
+
+      {isMobile && <IconButton />}
     </header>
   );
 };

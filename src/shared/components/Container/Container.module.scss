@@ -4,11 +4,13 @@
 
   @include media(mobile) {
     width: 90vw;
+    max-width: 550px;
   }
 
   @include media(laptop) {
     width: $laptop;
     padding: 0 60px;
+    max-width: none;
   }
 
   @include media(desktop) {

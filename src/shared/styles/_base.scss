@@ -70,3 +70,11 @@ a {
 a:hover {
   color: inherit;
 }
+
+p {
+  @include font(14, 21);
+
+  @include media(desktop) {
+    @include font(18, 27);
+  }
+}

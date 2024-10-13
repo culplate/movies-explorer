@@ -1,5 +1,7 @@
 .headline {
   @include font(20, 30);
+  color: $absolute-white;
+  margin-bottom: 10px;
 
   @include media(laptop) {
     @include font(28, 42);
@@ -7,5 +9,6 @@
 
   @include media(desktop) {
     @include font(38, 57);
+    margin-bottom: 14px;
   }
 }
